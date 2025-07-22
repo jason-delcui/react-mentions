@@ -1,7 +1,6 @@
 module.exports = {
   testRegex: '\\.spec\\.js$',
-
-  snapshotSerializers: ['enzyme-to-json/serializer'],
+  // Remove enzyme serializer since we're migrating to @testing-library/react
   collectCoverageFrom: ['src/**/*.js'],
   coverageReporters: ['cobertura', 'lcov', 'text-summary'],
   coverageDirectory: '<rootDir>/coverage',
