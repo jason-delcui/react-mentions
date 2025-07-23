@@ -10,13 +10,13 @@ Used in production at [Signavio](https://signavio.com), [State](https://state.co
 Install the _react-mentions_ package via npm:
 
 ```
-npm install react-mentions --save
+npm install @delcui/react-mentions --save
 ```
 
 Or yarn:
 
 ```
-yarn add react-mentions
+yarn add @delcui/react-mentions
 ```
 
 The package exports two React components for rendering the mentions textarea:
