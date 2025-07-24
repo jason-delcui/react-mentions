@@ -2,6 +2,12 @@ import PLACEHOLDERS from './placeholders'
 import escapeRegex from './escapeRegex'
 
 const markupToRegex = (markup) => {
+    if (typeof markup !== 'string') {
+        console.error('markupToRegex: Expected string markup but received:', typeof markup, markup)
+        // Return a default regex that matches the standard mention format
+        return /@\[([^\]]+?)\]\(([^)]+?)\)/g
+    }
+
     const escapedMarkup = escapeRegex(markup)
 
     const charAfterDisplay =

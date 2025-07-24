@@ -5,13 +5,18 @@ import countPlaceholders from './countPlaceholders'
 
 const readConfigFromChildren = children =>
   Children.toArray(children).map(
-    ({ props: { markup, regex, displayTransform } }) => ({
-      markup,
-      regex: regex
-        ? coerceCapturingGroups(regex, markup)
-        : markupToRegex(markup),
-      displayTransform: displayTransform || ((id, display) => display || id),
-    })
+    ({ props: { markup, regex, displayTransform } }) => {
+      // Ensure markup has a default value if undefined
+      const finalMarkup = markup || '@[__display__](__id__)'
+      
+      return {
+        markup: finalMarkup,
+        regex: regex
+          ? coerceCapturingGroups(regex, finalMarkup)
+          : markupToRegex(finalMarkup),
+        displayTransform: displayTransform || ((id, display) => display || id),
+      }
+    }
   )
 
 // make sure that the custom regex defines the correct number of capturing groups

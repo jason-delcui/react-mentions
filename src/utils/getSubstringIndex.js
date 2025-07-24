@@ -1,6 +1,11 @@
 import lettersDiacritics from './diacritics'
 
 const removeAccents = str => {
+  if (typeof str !== 'string') {
+    console.error('removeAccents: Expected string but received:', typeof str, str)
+    return ''
+  }
+
   let formattedStr = str
 
   lettersDiacritics.forEach(letterDiacritics => {
