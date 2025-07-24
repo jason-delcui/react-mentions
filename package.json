@@ -1,6 +1,6 @@
 {
   "name": "@delcui/react-mentions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React mentions input",
   "main": "dist/react-mentions.cjs.js",
   "module": "dist/react-mentions.esm.js",
